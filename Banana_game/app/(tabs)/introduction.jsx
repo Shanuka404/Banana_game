@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import images from "../../constants/images";
 
-const Rules = () => {
+const Introduction = () => {
   return (
     <SafeAreaView className="bg-darkGreen h-full">
       <ScrollView contentContainerStyle={{ height: "100%" }}>
@@ -42,4 +42,4 @@ const Rules = () => {
   );
 };
 
-export default Rules;
+export default Introduction;
