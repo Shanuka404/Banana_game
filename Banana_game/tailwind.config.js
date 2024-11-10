@@ -27,7 +27,7 @@ module.exports = {
         
       },
       fontFamily: {
-        pthin: ["Poppins-Thin", "sans-serif"],
+        pthin: ["Protest Rio", "sans-serif"],
         pextralight: ["Poppins-ExtraLight", "sans-serif"],
         plight: ["Poppins-Light", "sans-serif"],
         pregular: ["Poppins-Regular", "sans-serif"],
