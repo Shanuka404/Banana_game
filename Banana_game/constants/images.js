@@ -1,4 +1,10 @@
 import profile from "../assets/images/profile.png";
+import cupRack from "../assets/images/cupRack.png";
+import cup1 from "../assets/images/cup1.png";
+import cup2 from "../assets/images/cup2.png";
+import cup3 from "../assets/images/cup3.png";
+import cup4 from "../assets/images/cup4.png";
+import cup5 from "../assets/images/cup5.png";
 import board from "../assets/images/board.png";
 import thumbnail from "../assets/images/thumbnail.png";
 import cards from "../assets/images/cards.png";
@@ -8,4 +14,4 @@ import logoSmall from "../assets/images/logo-small.png";
 import empty from "../assets/images/empty.png";
 import albert from "../assets/images/albert.png";
 
-export default { profile, thumbnail, cards, path, logo, logoSmall, empty, albert, board };
+export default { profile, thumbnail, cards, path, logo, logoSmall, empty, albert, board, cupRack, cup1, cup2, cup3, cup4, cup5 };

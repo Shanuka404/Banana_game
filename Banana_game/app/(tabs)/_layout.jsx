@@ -56,22 +56,6 @@ const TabsLayout = () => {
           }}
         />
         <Tabs.Screen
-          name="achievements"
-          options={{
-            title: "Achievements",
-            headerShown: false,
-            tabBarIcon: ({ color, focused }) => (
-              <TabIcon
-                icon={icons.achievements}
-                color={color}
-                name="Achievements"
-                focused={focused}
-              />
-            ),
-          }}
-        />
-
-        <Tabs.Screen
           name="introduction"
           options={{
             title: "Introduction",
@@ -81,6 +65,21 @@ const TabsLayout = () => {
                 icon={icons.rules}
                 color={color}
                 name="Introduction"
+                focused={focused}
+              />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="achievements"
+          options={{
+            title: "Achievements",
+            headerShown: false,
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon
+                icon={icons.achievements}
+                color={color}
+                name="Achievements"
                 focused={focused}
               />
             ),

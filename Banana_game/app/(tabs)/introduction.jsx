@@ -13,11 +13,11 @@ const Introduction = () => {
           <Image
             source={images.logo}
             style={{
-              width: 200,
+              width: 100,
               height: 84,
               position: "absolute",
-              top: 20,       // Distance from the top
-              alignSelf: "center",      // Distance from the left
+              top: -30,       // Distance from the top
+              left: 25,        // Distance from the left
             }}
             resizeMode="contain"
           />
@@ -29,7 +29,7 @@ const Introduction = () => {
             style={{
               width: "100%",
               height: 555,
-              marginTop: 100, // Add margin to separate it from the logo
+              marginTop: -10, // Add margin to separate it from the logo
               maxWidth: 550,
             }}
             resizeMode="contain"
