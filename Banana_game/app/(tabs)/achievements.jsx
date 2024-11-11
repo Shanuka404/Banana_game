@@ -26,7 +26,7 @@ const Achievements = () => {
             source={images.cupRack}
             style={{
               width: screenWidth, // Image fills the screen width
-              height: 900,  // Let the image height adjust automatically
+              height: 1600,  // Let the image height adjust automatically
               aspectRatio: 0.4,   // Adjust this based on your image’s natural aspect ratio
               top: 30, 
             }}
