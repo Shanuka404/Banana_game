@@ -7,7 +7,7 @@ module.exports = {
       colors:{
         darkGreen:"#002417",
         orange:"#FF4500",
-        fernGreen: "#4F7942",
+        fernGreen: "#0E4516",
         white:"#FFFFFF",
         
         primary: "#161622",
