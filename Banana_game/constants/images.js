@@ -21,6 +21,8 @@ import albert from "../assets/images/albert.png";
 import dev from "../assets/images/dev.jpg";
 import medal1 from "../assets/images/medal1.png";
 
+import SignOutBtn from "../assets/images/SignOutBtn.png";
+import Back from "../assets/images/Back.png";
 
 import bronze from "../assets/images/bronze.png";
 import silver from "../assets/images/silver.png";
@@ -29,8 +31,10 @@ import platinum from "../assets/images/platinum.png";
 import epic from "../assets/images/epic.png";
 import master from "../assets/images/master.png";
 import bgprofilepage from "../assets/images/bgprofilepage.png";
+import LeaderBoard from "../assets/images/LeaderBoard.png";
 
 export default { profile, thumbnail, cards, path, logo, logoSmall, empty, albert,
      board, cupRack, cup1, cup2, cup3, cup4, cup5,bgHome, tournamentBtn, practiceBtn, leaderBoardBtn,
-     dev, medal1, bronze, silver, gold, platinum, epic, master, bgprofilepage, profile1
+     dev, medal1, bronze, silver, gold, platinum, epic, master, bgprofilepage, profile1, LeaderBoard,
+     SignOutBtn,Back
 };

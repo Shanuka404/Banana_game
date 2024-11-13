@@ -2,121 +2,70 @@ import { StatusBar } from "expo-status-bar";
 import { View, Image, ScrollView, Text, TouchableOpacity, Dimensions } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import images from "../../constants/images";
+import { router } from "expo-router";
+
+import Logo from "../../components/Logo";
+import BgHomePage from "../../components/BgHomePage";
+import Button from "../../components/Button";
+import HomeDetails from "../../components/HomeDetails";
 
 // Declare the name variable
 const name = "Devinda";
 const image = images.master;
 
-// Get screen width to set the image width dynamically
-const screenWidth = Dimensions.get("window").width;
 const Home = () => {
   return (
     <SafeAreaView className="bg-darkGreen h-full">
       <ScrollView>
         <View className="w-full flex justify-center items-center h-full px-4">
 
-          {/* Logo Image */}
-          <Image
-            source={images.logo}
-            style={{
-              width: 100,
-              height: 84,
-              position: "absolute",
-              top: -30,
-              left: 25,
-            }}
-            resizeMode="contain"
+          <Logo />
+
+          <BgHomePage />
+
+          <HomeDetails
+            profileImage={images.dev}
+            name="Devinda"
+            namePosition={{ top: 78, left: 86 }}
+            profilePosition={{ top: 67, left: 24 }}
+            icon={images.someIcon} // replace with actual icon image if needed
+            iconPosition={{ top: 75, left: 180 }}
+            profileSize={43} // Profile image size
           />
 
-          {/* Board Image */}
-          <Image
-            source={images.bgHome}
-            style={{
-              width: screenWidth,
-              height: 900,
-              top: -128,
-              aspectRatio: 0.4,
-            }}
-            resizeMode="contain"
-          />
-          
-          <View
-            style={{
-              position: "absolute",
-              top: 67,       // Adjust to desired position
-              left: 24,      // Adjust to desired position
-              alignItems: "center",
-            }}
-          >
-            <Image
-              source={images.dev} // assuming dev.jpg is referenced as `images.dev`
-              style={{
-                width: 43,
-                height: 43,
-                borderRadius: 40,   // Makes the image circular
-                borderWidth: 1,
-                borderColor: "white",
-              }}
-            />
-          </View>
-          <View
-            style={{
-              position: "absolute",
-              top: 78,       // Adjust to desired position
-              left: 86,      // Adjust to desired position
-              alignItems: "center",
-              textAlign: "center",
-            }}
-          >
-            <Text className=" text-white font-bold text-center font-psemibold">{name}</Text>
-          </View>
-          <View
-            style={{
-              position: "absolute",
-              top: 75,       // Adjust to desired position
-              left: 180,     // Adjust to desired position
-              alignItems: "center",
-            }}
-          >
-            <Image
-              source={image}
-              style={{
-                width: 25,    // Adjust width as needed
-                height: 25,   // Adjust height as needed
-              }}
-              resizeMode="contain"
-            />
-          </View>
+
           {/* Buttons */}
-          <TouchableOpacity
+          <Button
+            source={images.tournamentBtn}
             style={{
               position: "absolute",
-              top: 620,    // Adjust to desired position
-              left: 10,    // Adjust to desired position
+              top: 620,
+              left: 10,
+              width: 160,
+              height: 135,
             }}
-          >
-            <Image source={images.tournamentBtn} style={{ width: 160, height: 135 }} />
-          </TouchableOpacity>
-
-          <TouchableOpacity
+          />
+          <Button
+            source={images.practiceBtn}
             style={{
               position: "absolute",
-              top: 620,    // Adjust to desired position
-              left: 210,   // Adjust to desired position
+              top: 620,
+              left: 210,
+              width: 160,
+              height: 135,
             }}
-          >
-            <Image source={images.practiceBtn} style={{ width: 160, height: 135 }} />
-          </TouchableOpacity>
-
-          <TouchableOpacity
+          />
+          <Button
+            source={images.leaderBoardBtn}
             style={{
               position: "absolute",
-              top: 500,    // Adjust to desired position
-              left: 10,   // Adjust to desired position
+              top: 500,
+              left: 10,
+              width: 365,
+              height: 100,
             }}
-          >
-            <Image source={images.leaderBoardBtn} style={{ width: 365, height: 100 }} />
-          </TouchableOpacity>
+            onPress={() => router.push("/(game)/leader-board")}
+          />
 
         </View>
       </ScrollView>
