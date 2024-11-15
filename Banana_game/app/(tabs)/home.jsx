@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { View, Image, ScrollView, Text, TouchableOpacity, Dimensions } from "react-native";
+import { View, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import images from "../../constants/images";
 import { router } from "expo-router";
@@ -9,9 +9,7 @@ import BgHomePage from "../../components/BgHomePage";
 import Button from "../../components/Button";
 import HomeDetails from "../../components/HomeDetails";
 
-// Declare the name variable
-const name = "Devinda";
-const image = images.master;
+
 
 const Home = () => {
   return (
@@ -26,11 +24,11 @@ const Home = () => {
           <HomeDetails
             profileImage={images.dev}
             name="Devinda"
-            namePosition={{ top: 78, left: 86 }}
-            profilePosition={{ top: 67, left: 24 }}
-            icon={images.someIcon} // replace with actual icon image if needed
-            iconPosition={{ top: 75, left: 180 }}
-            profileSize={43} // Profile image size
+            namePosition={{ top: 78, left: 90 }}
+            profilePosition={{ top: 67, left: 23 }}
+            icon={images.master} // replace with actual icon image if needed
+            iconPosition={{ top: 75, left: 183 }}
+            profileSize={45} // Profile image size
           />
 
 
@@ -39,27 +37,29 @@ const Home = () => {
             source={images.tournamentBtn}
             style={{
               position: "absolute",
-              top: 620,
+              top: 540,
               left: 10,
               width: 160,
               height: 135,
             }}
+            onPress={() => router.push("/(game)/tournament")}
           />
           <Button
             source={images.practiceBtn}
             style={{
               position: "absolute",
-              top: 620,
+              top: 540,
               left: 210,
               width: 160,
               height: 135,
             }}
+            onPress={() => router.push("/(game)/practice-mode")}
           />
           <Button
             source={images.leaderBoardBtn}
             style={{
               position: "absolute",
-              top: 500,
+              top: 420,
               left: 10,
               width: 365,
               height: 100,

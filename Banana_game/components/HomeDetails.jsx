@@ -28,8 +28,8 @@ const HomeDetails = ({ profileImage, name, namePosition, icon, iconPosition, pro
       <Image
         source={icon}
         style={{
-          width: 25, // Default width
-          height: 25, // Default height
+          width: 22, // Default width
+          height: 22, // Default height
         }}
         resizeMode="contain"
       />

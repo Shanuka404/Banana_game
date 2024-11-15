@@ -1,11 +1,15 @@
 import FormField from "./FormField";
 import CustomButton from "./CustomButton";
 import Loader from "./Loader";
+
 import LeaderBoardTable from "./LeaderBoardTable";
-import PlayerImage from "./PlayerImage";
-import Logo from "./Logo";
 import BgIntroductionpage from "./BgIntroductionpage";
 import BgAchievementPage from "./BgAchievementPage";
+
+import PlayerImage from "./PlayerImage";
+import Logo from "./Logo";
+
+
 import BgProfilePage from "./BgProfilePage";
 import BestScore from "./BestScore";
 import CupImages from "./CupImages";
@@ -17,6 +21,9 @@ import BgHomePage from "./BgHomePage";
 import BgLeaderBoardPage from "./BgLeaderBoardPage";
 import Button from "./Button";
 import HomeDetails from "./HomeDetails";
+import BgTurnamentPage from "./BgTurnamentPage";
+
+
 
 export {
   FormField,
@@ -37,5 +44,7 @@ export {
   BgHomePage,
   BgLeaderBoardPage,
   Button,
-  HomeDetails
+  HomeDetails,
+  BgTurnamentPage,
+  
 };

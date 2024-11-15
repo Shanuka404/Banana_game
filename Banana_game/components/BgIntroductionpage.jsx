@@ -1,5 +1,3 @@
-// components/BoardImage.jsx
-import React from 'react';
 import { Image } from 'react-native';
 import images from "../constants/images";  
 

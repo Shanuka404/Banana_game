@@ -1,7 +1,7 @@
-import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { View, Image, Dimensions } from "react-native";
+import { View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+
 import images from "../../constants/images";
 import LeaderboardTable from "../../components/LeaderBoardTable";
 import PlayerImage from "../../components/PlayerImage";
@@ -26,8 +26,6 @@ const LeaderBoard = () => (
     <View className="w-full flex justify-center items-center h-full px-4">
 
       <Logo />
-
-      {/* Background Image */}
       <BgLeaderBoardPage />
     </View>
 
