@@ -17,6 +17,7 @@ import SignOutBtn from "../assets/images/SignOutBtn.png";
 import Back from "../assets/images/Back.png";
 import SkipBtn from "../assets/images/SkipBtn.png";
 import ExitBtn from "../assets/images/ExitBtn.png";
+import Delete from "../assets/images/delete.png";
 
 import tournamentBtn from "../assets/images/tournamentBtn.png";
 import practiceBtn from "../assets/images/practiceBtn.png";
@@ -51,5 +52,6 @@ import btn9 from "../assets/images/btn9.png";
 export default { profile, cards, path, logo, logoSmall,
      board, cupRack, cup1, cup2, cup3, cup4, cup5,bgHome, tournamentBtn, practiceBtn, leaderBoardBtn,
      dev, bronze, silver, gold, platinum, epic, master, bgprofilepage, profile1, LeaderBoard,
-     SignOutBtn, Back, BgTurnamentPage, btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, ExitBtn, SkipBtn
+     SignOutBtn, Back, BgTurnamentPage, btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, 
+     ExitBtn, SkipBtn,Delete
 };

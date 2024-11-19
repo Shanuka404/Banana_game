@@ -1,4 +1,3 @@
-import React from "react";
 import { Image, TouchableOpacity } from "react-native";
 import * as ImagePicker from 'expo-image-picker';
 import icons from "../constants/icons";

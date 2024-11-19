@@ -28,6 +28,7 @@ const Tournament = () => {
     width: 300,
     height: 250,
   });
+  
   const [wrongAttempts, setWrongAttempts] = useState(0); // Track wrong attempts per question
   const [consecutiveCorrect, setConsecutiveCorrect] = useState(0); // Track consecutive correct answers
   const [alertMessage, setAlertMessage] = useState(""); // Alert message for feedback
@@ -105,7 +106,7 @@ const Tournament = () => {
         setLives((prevLives) => prevLives + 1);
         setAlertMessage("Congratulations! You've earned 1 life.");
         setAlertBackgroundColor("green");
-        setTimeout(() => setAlertMessage(""), 3000);
+        setTimeout(() => setAlertMessage(""), 6000);
         setConsecutiveCorrect(0); // Reset consecutive correct count
       }
       fetchNewQuestion(); // Fetch the next question

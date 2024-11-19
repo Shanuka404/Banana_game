@@ -6,11 +6,8 @@ import { View, Text, ScrollView, Dimensions, Alert, Image } from "react-native";
 import  images  from "../../constants/images";
 import  CustomButton from "../../components/CustomButton";
 import FormField  from "../../components/FormField";
-// import { createUser } from "../../lib/appwrite";
-// import { useGlobalContext } from "../../context/GlobalProvider";
 
 const SignUp = () => {
-  // const { setUser, setIsLogged } = useGlobalContext();
 
   const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({

@@ -61,15 +61,27 @@ const Profile = () => {
           <CupImages cupImages={cupImages} />
 
           {/* SignOutbtn */}
-          <CupImages cupImages={cupImages} />
           <Button
             source={images.SignOutBtn}
             style={{
               position: "absolute",
-              top: 900,
-              left: 10,
-              width: 360,
-              height: 80,
+              top: 25,
+              right: 10,
+              width: 115,
+              height: 27,
+            }}
+            onPress={() => router.push("/(auth)/sign-in")}
+          />
+
+          {/* Delete */}
+          <Button
+            source={images.Delete}
+            style={{
+              position: "absolute",
+              top: 920,
+              left: 85,
+              width: 200,
+              height: 45,
             }}
             onPress={() => router.push("/(auth)/sign-in")}
           />
