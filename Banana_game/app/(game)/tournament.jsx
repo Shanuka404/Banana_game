@@ -9,7 +9,6 @@ import NumberButton from "../../components/NumberButton";
 import images from "../../constants/images";
 import { router } from "expo-router";
 import icons from "../../constants/icons";
-
 import logo from "../../assets/images/logo.png";
 
 const Tournament = () => {

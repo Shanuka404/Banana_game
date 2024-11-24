@@ -10,7 +10,6 @@ import BgLeaderBoardPage from "../../components/BgLeaderBoardPage";
 import Button from "../../components/Button";
 
 import { router } from "expo-router";
-
 const leaderboardData = [
   { rank: 1, player: { image: images.dev, name: "Shanuka" }, score: 2600 },
   { rank: 2, player: { image: images.profile, name: "Devinda" }, score: 2500 },

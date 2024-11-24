@@ -12,7 +12,7 @@ const Introduction = () => {
 
           <Logo />
           <BgIntroductionpage />
-          
+
         </View>
       </ScrollView>
 

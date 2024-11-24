@@ -2,6 +2,8 @@ import FormField from "./FormField";
 import CustomButton from "./CustomButton";
 import Loader from "./Loader";
 
+import ProtectedRoute from "./ProtectedRoute";
+
 import LeaderBoardTable from "./LeaderBoardTable";
 import BgIntroductionpage from "./BgIntroductionpage";
 import BgAchievementPage from "./BgAchievementPage";
@@ -46,5 +48,5 @@ export {
   Button,
   HomeDetails,
   BgTurnamentPage,
-  
+  ProtectedRoute
 };

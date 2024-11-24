@@ -9,8 +9,6 @@ import BgHomePage from "../../components/BgHomePage";
 import Button from "../../components/Button";
 import HomeDetails from "../../components/HomeDetails";
 
-
-
 const Home = () => {
   return (
     <SafeAreaView className="bg-darkGreen h-full">
