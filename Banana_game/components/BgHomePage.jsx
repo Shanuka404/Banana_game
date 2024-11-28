@@ -10,7 +10,7 @@ const BgHomePage = () => (
     style={{
       width: screenWidth,
       height: 900,
-      top: -200,
+      top: -250,
       aspectRatio: 0.4,
     }}
     resizeMode="contain"

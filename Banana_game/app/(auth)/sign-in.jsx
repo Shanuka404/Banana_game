@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, ScrollView, Dimensions, Alert, Image, KeyboardAvoidingView, Platform } from "react-native";
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import  images  from "../../constants/images";
 import  CustomButton from "../../components/CustomButton";
 import FormField  from "../../components/FormField";
@@ -25,14 +25,12 @@ const SignIn = () => {
   
     try {
       const response = await signIn(form.email, form.password);
-  
-      // Show the success alert and navigate only after dismissing it
-      Alert.alert("Success", "Logged in successfully", [
+      await AsyncStorage.setItem("token", response.token); // Save token to AsyncStorage
+      
+      Alert.alert("Success", "Logged in successfully!", [
         {
           text: "OK",
-          onPress: () => {
-            router.replace("/home"); // Navigate after clicking OK
-          },
+          onPress: () => router.replace("/home"), // Navigate only after clicking OK
         },
       ]);
     } catch (error) {
@@ -41,7 +39,6 @@ const SignIn = () => {
       setSubmitting(false);
     }
   };
-  
 
   return (
     <SafeAreaView className="bg-darkGreen h-full">

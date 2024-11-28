@@ -9,11 +9,11 @@ const ProtectedRoute = ({ children }) => {
   useEffect(() => {
     if (!user) {
       console.log("User not logged in. Redirecting to sign-in...");
-      router.replace("/sign-in");
+      router.replace("/sign-in"); // Redirect to sign-in if the user is not logged in
     }
-  }, [user]);
+  }, [user, router]);
 
-  if (!user) return null;
+  if (!user) return null; // Prevent rendering if user is not logged in
 
   return <>{children}</>;
 };

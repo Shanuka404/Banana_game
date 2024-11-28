@@ -10,6 +10,8 @@ import images from "../../constants/images";
 import { router } from "expo-router";
 import icons from "../../constants/icons";
 import logo from "../../assets/images/logo.png";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import axios from 'axios';
 
 const Tournament = () => {
   // State variables to handle game logic
@@ -79,6 +81,9 @@ const Tournament = () => {
     setTriggerMessage(message); // Set the determined message
     setScore(score); // Example score value for demonstration
     setIsGameOver(true); // Open the modal
+
+    // Trigger saveHighScore function when the game ends
+    saveHighScore(score);
   };
 
 
@@ -144,6 +149,52 @@ const Tournament = () => {
       setTimeout(() => setAlertMessage(""), 3000);
     }
   }, [timer]);
+
+
+  // Function to save high score and update backend
+  const saveHighScore = async (score) => {
+    try {
+      // Retrieve the stored JWT token from AsyncStorage
+      const token = await AsyncStorage.getItem('jwtToken');
+  
+      if (token) {
+        // Get the current high score from AsyncStorage
+        const storedHighScore = await AsyncStorage.getItem("highScore");
+        const highScore = storedHighScore ? parseInt(storedHighScore) : 0;
+  
+        // If the current score is greater than the saved high score
+        if (score > highScore) {
+          // Save the new high score in AsyncStorage
+          await AsyncStorage.setItem("highScore", score.toString());
+  
+          // Call the backend to update the database with the new high score
+          const response = await fetch("http://172.20.10.3:5000/api/auth/update-high-score", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${token}`,  // Add the JWT token in the Authorization header
+            },
+            body: JSON.stringify({ score }),
+          });
+  
+          const data = await response.json();
+          if (data.message === "High score updated") {
+            console.log("High score updated successfully in the database!");
+          } else {
+            console.log("Current score is not higher than the previous high score.");
+          }
+        } else {
+          console.log("Game over. You didn't beat your high score.");
+        }
+      } else {
+        console.log("No JWT token found. Please log in again.");
+      }
+    } catch (error) {
+      console.error("Error saving high score:", error);
+    }
+  };
+  
+
   return (
     <SafeAreaView className="bg-darkGreen h-full">
       <View className="w-full flex justify-center items-center h-full px-4">

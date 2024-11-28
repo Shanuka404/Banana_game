@@ -7,7 +7,7 @@ import { router } from "expo-router";
 import Logo from "../../components/Logo";
 import BgHomePage from "../../components/BgHomePage";
 import Button from "../../components/Button";
-import HomeDetails from "../../components/HomeDetails";
+
 
 const Home = () => {
   return (
@@ -18,17 +18,6 @@ const Home = () => {
           <Logo />
 
           <BgHomePage />
-
-          <HomeDetails
-            profileImage={images.dev}
-            name="Devinda"
-            namePosition={{ top: 78, left: 90 }}
-            profilePosition={{ top: 67, left: 23 }}
-            icon={images.master} // replace with actual icon image if needed
-            iconPosition={{ top: 75, left: 183 }}
-            profileSize={45} // Profile image size
-          />
-
 
           {/* Buttons */}
           <Button
