@@ -11,7 +11,6 @@ import { router } from "expo-router";
 import icons from "../../constants/icons";
 import logo from "../../assets/images/logo.png";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import axios from 'axios';
 
 const Tournament = () => {
   // State variables to handle game logic

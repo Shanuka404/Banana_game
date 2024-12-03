@@ -115,6 +115,8 @@ const Profile = () => {
           <Level bestScore={highScore} />
           <CupImages highScore={highScore} />
 
+
+          
           {/* SignOut Button */}
           <Button
             source={images.SignOutBtn}

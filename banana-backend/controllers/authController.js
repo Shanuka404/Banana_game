@@ -2,6 +2,8 @@ const User = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = process.env.JWT_SECRET;
+const fs = require('fs');
+const path = require('path');
 
 const registerUser = async (req, res) => {
   const { username, email, password } = req.body;
@@ -149,8 +151,36 @@ const updateHighScore = async (req, res) => {
   }
 };
 
+
+const uploadProfileImage = async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ message: 'No file uploaded' });
+    }
+
+    const filePath = path.join('upload', req.file.filename);
+
+    // Ensure that req.userId is available
+    const user = await User.findById(req.userId); // Await the database query
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Update the user's profile image in the database
+    user.profileImage = filePath;
+    await user.save(); // Await the save operation
+
+    res.status(200).json({ message: 'Profile image uploaded successfully', filePath: filePath });
+  } catch (error) {
+    console.error(error); // Log the error for debugging
+    res.status(500).json({ message: error.message });
+  }
+};
+
+
 module.exports = { 
   registerUser, loginUser, getUserProfile, 
   getRankings, deleteUser , 
-  getLeaderboard, updateHighScore
+  getLeaderboard, updateHighScore, uploadProfileImage
 };
