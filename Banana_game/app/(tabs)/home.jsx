@@ -10,56 +10,82 @@ import BgHomePage from "../../components/BgHomePage";
 import Button from "../../components/Button";
 
 const Home = () => {
-  const [timeData, setTimeData] = useState({
-    datetime: "2024-12-02T21:31:00",
-  });
+  const [timeData, setTimeData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  const fetchTime = async () => {
+    try {
+      const response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Colombo");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      setTimeData(data);
+      setError(false);
+    } catch (error) {
+      console.error("Error fetching time data:", error);
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchTime = async () => {
-      try {
-        const response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Colombo");
-        const data = await response.json();
-        setTimeData(data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching time data:", error);
-        setLoading(false);
-      }
-    };
-
     fetchTime();
+
+    // Set interval to reload the API every 24 hours
+    const interval = setInterval(() => {
+      fetchTime();
+    }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
-  const formattedDate = timeData.datetime ? timeData.datetime.split("T")[0] : "2024-12-02";
-  const formattedTime = timeData.datetime
-    ? timeData.datetime.split("T")[1].split(":").slice(0, 2).join(":") 
-    : "21:31";
+  const formattedDate = timeData?.datetime ? timeData.datetime.split("T")[0] : null;
 
   return (
     <SafeAreaView className="bg-darkGreen h-full">
       <ScrollView>
         <View className="w-full flex justify-center items-center h-full px-4">
-          {/* Display Time */}
+          {/* Display Date */}
           <View className="w-full flex items-center mt-4">
             {loading ? (
               <ActivityIndicator size="small" color="#fff" />
-            ) : (
+            ) : error || !timeData ? (
               <Text
                 style={{
-                  backgroundColor: '#2e8b57',
-                  color: '#155724',
-                  fontWeight: 'bold',
+                  backgroundColor: "#ffcccb",
+                  color: "#a94442",
+                  fontWeight: "bold",
                   fontSize: 16,
                   padding: 10,
                   borderRadius: 10,
-                  textAlign: 'center',
+                  textAlign: "center",
                   top: 30,
-                  overflow: 'hidden',
-                  width: '90%',
+                  overflow: "hidden",
+                  width: "90%",
                 }}
               >
-                Date: {formattedDate} Time: {formattedTime}
+                Unable to fetch date data. Please check your connection.
+              </Text>
+            ) : (
+              <Text
+                style={{
+                  backgroundColor: "#2e8b57",
+                  color: "#155724",
+                  fontWeight: "bold",
+                  fontSize: 16,
+                  padding: 10,
+                  borderRadius: 10,
+                  textAlign: "center",
+                  top: 30,
+                  overflow: "hidden",
+                  width: "90%",
+                }}
+              >
+                Date: {formattedDate}
               </Text>
             )}
           </View>

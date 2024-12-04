@@ -1,5 +1,6 @@
 import React from "react";
 import {Dimensions, Animated } from "react-native";
+//react-native-reanimated
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import Logo from "../../components/Logo";

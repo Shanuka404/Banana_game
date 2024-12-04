@@ -105,7 +105,7 @@ const Tournament = () => {
 
 
       // Grant extra life for 5 consecutive correct answers without a wrong attempt
-      if (consecutiveCorrect + 1 === 5 && lives < 3) {
+      if (consecutiveCorrect + 1 === 10 && lives < 3) {
         setLives((prevLives) => prevLives + 1);
         setAlertMessage("Congratulations! You've earned 1 life.");
         setAlertBackgroundColor("green");
